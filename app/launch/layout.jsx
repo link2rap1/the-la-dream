@@ -1,0 +1,1 @@
+import "./launch.css"; export const metadata={title:"Launch Dashboard | The L.A. Dream"}; export default function LaunchLayout({children}){return children}
