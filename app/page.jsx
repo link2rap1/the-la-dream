@@ -1,0 +1,15 @@
+const artists = [
+  { name: "Your Music. Your Voice.", genre: "ARTIST SPOTLIGHT", symbol: "♪" },
+  { name: "Your Brand. Your Story.", genre: "MERCHANDISE", symbol: "✦" },
+  { name: "Your Fans. Your Future.", genre: "COMMUNITY", symbol: "★" }
+];
+export default function Home() {
+  return <main>
+    <header className="topbar"><a className="logo" href="/">THE <span>L.A.</span> DREAM</a><nav aria-label="Main navigation"><a href="#discover">Discover</a><a href="#artists">For Artists</a><a href="#merch">Merch</a></nav><a className="smallButton" href="#join">Join the Dream</a></header>
+    <section className="hero"><div className="eyebrow">INDEPENDENT ARTISTS. UNLIMITED POSSIBILITIES.</div><h1>YOUR DREAM.<br/><em>YOUR STAGE.</em></h1><p>Discover independent music, connect with emerging artists, and build a brand that goes beyond the music.</p><div className="actions"><a className="button" href="#discover">Explore the Dream <span>↗</span></a><a className="outlineButton" href="#artists">I'm an Artist</a></div><div className="heroFooter">THE L.A. DREAM <span>✦</span> POWERED BY SNAPCITY</div></section>
+    <section className="section" id="discover"><div className="sectionHead"><div><div className="eyebrow">EXPLORE THE PLATFORM</div><h2>MORE THAN <em>MUSIC.</em></h2></div><p>A creative home for artists and the fans who believe in them.</p></div><div className="tiles">{artists.map((a,i)=><article className={"tile tile"+i} key={a.name}><div className="tileSymbol">{a.symbol}</div><div className="eyebrow">{a.genre}</div><h3>{a.name}</h3><p>{i===0?"Discover fresh sounds from independent voices.":i===1?"Turn your creativity into merchandise fans can wear.":"Build connections that move your career forward."}</p></article>)}</div></section>
+    <section className="split" id="artists"><div><div className="eyebrow">BUILT FOR INDEPENDENT ARTISTS</div><h2>MAKE YOUR<br/><em>MARK.</em></h2><p>Artist profiles, music uploads, fan discovery, and merchandise opportunities — designed to help independent talent grow.</p></div><div className="membership" id="join"><div className="eyebrow">PLANNED ARTIST MEMBERSHIP</div><div className="price">$14.99<span>/ month</span></div><p>One place for your music, your audience, and your next opportunity.</p><div className="notice">Membership enrollment is coming soon. Payments are not yet enabled.</div></div></section>
+    <section className="merch" id="merch"><div className="eyebrow">POWERED BY SNAPCITY</div><h2>WEAR THE <em>DREAM.</em></h2><p>Artist merchandise and exclusive collections are on the way.</p><a className="outlineButton" href="https://www.therealsnapcity.com" target="_blank" rel="noopener noreferrer">Visit SnapCity ↗</a></section>
+    <footer><strong>THE <span>L.A.</span> DREAM</strong><p>Where Artists Build Their Dreams</p><small>© {new Date().getFullYear()} The L.A. Dream. Powered by SnapCity. Preview website — artist accounts, streaming and checkout are not yet live.</small></footer>
+  </main>;
+}
